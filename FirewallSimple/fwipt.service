@@ -1,0 +1,13 @@
+[Unit]
+Description=My firewall
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/etc/ocserv/firewall.sh
+ExecStop=/etc/ocserv/firewall.sh stop
+ExecReload=/etc/ocserv/firewall.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=network.target
